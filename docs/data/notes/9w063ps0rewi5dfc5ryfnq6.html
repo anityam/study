@@ -1,0 +1,80 @@
+<h1 id="service-mesh">Service mesh<a aria-hidden="true" class="anchor-heading icon-link" href="#service-mesh"></a></h1>
+<h1 id="service-mesh-1">Service Mesh<a aria-hidden="true" class="anchor-heading icon-link" href="#service-mesh-1"></a></h1>
+<p>The way to manage traffic inside the kubernetes cluster. The services in a fast pace microservice type environment where many applications are talking to each other, the requirements for the proxy( connection flows) for each application becomes to huge to manually manage.
+Instead of injecting logic on each service or having many services for an application is cumbersome. Therefore a service mesh is an infrastructure that handles the data plane for all the services and controls the flow of traffic in a cluster. With  a service mesh the logic for traffic flow
+can be a stand alone application without introducing the network logic in the application design. Istio is a open source service mesh popular in the company standard. </p>
+<h2 id="istio">Istio<a aria-hidden="true" class="anchor-heading icon-link" href="#istio"></a></h2>
+<h2 id="installation">Installation<a aria-hidden="true" class="anchor-heading icon-link" href="#installation"></a></h2>
+<p>The installation of istio control plane is done at the <code>istio-system</code> namespace. The process for installation can be followed at <a href="https://github.com/anityam/istio">https://github.com/anityam/istio</a> . The installation will install the control plane at <code>istio-system</code>.</p>
+<h2 id="component">Component<a aria-hidden="true" class="anchor-heading icon-link" href="#component"></a></h2>
+<p>Istiod --> This is the main component of the control plane. The custom resources that istio uses like <code>virtualhost</code> are converted to envoy configs by istiod</p>
+<h2 id="traffic-entry-point">Traffic Entry point<a aria-hidden="true" class="anchor-heading icon-link" href="#traffic-entry-point"></a></h2>
+<p>The traffic in the istio cluster moves inside the cluster through the <strong>INGRESS</strong> resource.</p>
+<h3 id="concept">Concept<a aria-hidden="true" class="anchor-heading icon-link" href="#concept"></a></h3>
+<p>Istiod is the controller for the Ingress resource. It looks at the configs and configures the envoy based proxy. This can have a corresponding nodePort or external cloud based loadbalancer that exposes the traffic </p>
+<h4 id="envoy-proxy">Envoy Proxy<a aria-hidden="true" class="anchor-heading icon-link" href="#envoy-proxy"></a></h4>
+<h2 id="concept-1">Concept<a aria-hidden="true" class="anchor-heading icon-link" href="#concept-1"></a></h2>
+<p>Istio keeps a database of it's managed service and service endpoints in a registry called service registry. The envoy proxy uses this service registry to route the traffic. Istio has a mechanism of service discovery (Pilot) or <a href="https://istio.io/latest/docs/reference/config/networking/service-entry/">ServiceEntry</a> configuration can be added to add the service to the service Registry.
+Envoy proxy distributes traffic based on least load model. If there are more than two loadbalancer or host receiving the traffic than envoy routes the traffic to the host that is handling the least amount of traffic
+Outside of the routes istio can also split traffic across instances </p>
+<h2 id="apis">Apis<a aria-hidden="true" class="anchor-heading icon-link" href="#apis"></a></h2>
+<ol>
+<li>Virtual Service</li>
+<li>Destination Rule</li>
+<li>Service Entry</li>
+<li>Gateways</li>
+<li>Sidecars</li>
+</ol>
+<h3 id="ingress-gateway">Ingress Gateway<a aria-hidden="true" class="anchor-heading icon-link" href="#ingress-gateway"></a></h3>
+<p>The entry point to the cluster. This is deployed in the <code>istio-system</code> namespace. This uses an Envoy proxy for the traffic coming from outside the cluster which is usually a loadbalancer(for external cloud based deployment) or a nodeport. We can use <code>istioctl</code> to inspect all the traffic flows that are being listed in the ingress gateway envoy filter. The process running inside the ingressgateway is the </p>
+<pre class="language-bash"><code class="language-bash">k <span class="token builtin class-name">exec</span> -n istio-system deploy/istio-ingressgateway -- <span class="token function">ps</span>  
+    PID TTY          TIME CMD
+      <span class="token number">1</span> ?        00:00:04 pilot-agent
+     <span class="token number">20</span> ?        00:00:21 envoy
+     <span class="token number">39</span> ?        00:00:00 <span class="token function">ps</span>
+</code></pre>
+<p>The <code>pilot-agent</code> bootstraps the envoy filter and creates the rules which can be view by</p>
+<pre class="language-bash"><code class="language-bash">istioctl -n istio-system proxy-config route deploy/istio-ingressgateway
+NAME     VHOST NAME     DOMAINS     MATCH                  VIRTUAL SERVICE
+         backend        *           /stats/prometheus*     
+         backend        *           /healthz/ready*        
+</code></pre>
+<p>The next chapter is to open up the traffic flow inside the cluster</p>
+<h3 id="gateway">Gateway<a aria-hidden="true" class="anchor-heading icon-link" href="#gateway"></a></h3>
+<p>Gateway are how traffic comes to the cluster and then it can be routed to a virtual service. The gateway opens up a specific port on the ingress-gateway for incoming traffic. once a gateway is deploy </p>
+<pre class="language-bash"><code class="language-bash">k get gateway
+NAME                AGE
+coolstore-gateway   63s
+</code></pre>
+<p>Now when we look at the envoy proxy-config we will see the port being opened </p>
+<pre class="language-bash"><code class="language-bash">istioctl -n istio-system proxy-config route deploy/istio-ingressgateway
+NAME          VHOST NAME         DOMAINS     MATCH                  VIRTUAL SERVICE
+http.8080     blackhole:8080     *           /*                     <span class="token number">404</span>
+              backend            *           /stats/prometheus*     
+              backend            *           /healthz/ready* 
+</code></pre>
+<p><strong>blackhole</strong> is due to the absence of any routing to the upstream cluster. Therefore all the traffic is now passed to a blackhole of 404 so when you hit the endpoint <code>http://127.0.0.1:3000/</code> (port 3000 is due to the nodePort setup of istio-ingressgateway) we will see a 404</p>
+<h3 id="virtual-service">Virtual Service<a aria-hidden="true" class="anchor-heading icon-link" href="#virtual-service"></a></h3>
+<p>This routes the traffic from to specific services at the backend. It can be used to define routes to various real services based on the rules.In the VirtualService we will define the routes specified for the upstream traffic. Once the virtual service defines the traffic we can see the traffic routes in the proxy</p>
+<pre class="language-bash"><code class="language-bash">istioctl -n istio-system proxy-config route deploy/istio-ingressgateway
+NAME          VHOST NAME                       DOMAINS                     MATCH                  VIRTUAL SERVICE
+http.8080     webapp.istioinaction.io:8080     webapp.istioinaction.io     /*                     webapp-vs-from-gw.istioinaction
+              backend                          *                           /stats/prometheus*     
+              backend                          *                           /healthz/ready* 
+</code></pre>
+<p>With the route set now the webpage can be viewed at <code>http://webapp.istioinaction.io:3000/</code> (here the <a href="http://weapp.istioinaction.io">http://weapp.istioinaction.io</a> is pointing to 127.0.0.1 at <code>/etc/hosts</code>). </p>
+<h3 id="destination-rule">Destination Rule<a aria-hidden="true" class="anchor-heading icon-link" href="#destination-rule"></a></h3>
+<p>This handles traffic to the specific destination. This is behind the virtual service once the traffic is directed to specific host then the destination service can apply the rules to the traffic</p>
+<h3 id="service-entry">Service Entry<a aria-hidden="true" class="anchor-heading icon-link" href="#service-entry"></a></h3>
+<p>This is usually used to define a traffic leaving a cluster where a specific call in the cluster can be routed to an entry point pointing to the external cluster.</p>
+<h3 id="sidecars">sidecars<a aria-hidden="true" class="anchor-heading icon-link" href="#sidecars"></a></h3>
+<p>To define a special rules for the sidecars used by the istio</p>
+<h2 id="document">Document<a aria-hidden="true" class="anchor-heading icon-link" href="#document"></a></h2>
+<p><a href="https://istio.io/latest/docs/concepts/traffic-management/">https://istio.io/latest/docs/concepts/traffic-management/</a> --> Traffic management read
+<a href="https://banzaicloud.com/blog/backyards-ingress/">https://banzaicloud.com/blog/backyards-ingress/</a>  ---> Ingress Istio
+<a href="https://istio.io/latest/docs/concepts/traffic-management/#virtual-services">https://istio.io/latest/docs/concepts/traffic-management/#virtual-services</a> --> Virtual Service</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/notes/1x0zf84gbbfnd1owvoeciml">Envoy</a></li>
+</ol>

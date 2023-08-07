@@ -1,0 +1,31 @@
+<h1 id="envoy">Envoy<a aria-hidden="true" class="anchor-heading icon-link" href="#envoy"></a></h1>
+<h1 id="envoy-1">Envoy<a aria-hidden="true" class="anchor-heading icon-link" href="#envoy-1"></a></h1>
+<p>Envoy is the backbone of the Istio service mesh. It is an open source project that lives in <a href="https://envoyproxy.io">https://envoyproxy.io</a> .</p>
+<p>It is a transparent proxy. The main concept of which was established to create a transparent network proxy which is easy to debug. A proxy is a middleman that sits between the client and the server and through which the traffic flows for the communication between server and client.
+Client ---> Proxy ---> Server
+Technically a proxy can stand between the client and server and simplify the setting. The communication logic can be placed in the proxy without the server and client having to delete with the communication logic and able to focus on their specific client or server based logics.</p>
+<h2 id="concept">Concept<a aria-hidden="true" class="anchor-heading icon-link" href="#concept"></a></h2>
+<p> Envoy is designed as an application level proxy and can understand the layer 7 protocols. It can be extended to understand other level proxies. Lot of more telemetries come out of box due to Envoy understanding application level protocols</p>
+<h2 id="feature">Feature<a aria-hidden="true" class="anchor-heading icon-link" href="#feature"></a></h2>
+<p>Listeners --> ports where downstream(something sending information from to the server or to the )
+Routes --> The route setup for the downstream routes to be moved to the upstream clusters
+Clusters --> the server portion or the </p>
+<h3 id="service-discovery">Service Discovery<a aria-hidden="true" class="anchor-heading icon-link" href="#service-discovery"></a></h3>
+<p>It uses service discovery api to look for the service. </p>
+<h3 id="load-balancing">Load Balancing<a aria-hidden="true" class="anchor-heading icon-link" href="#load-balancing"></a></h3>
+<p>It uses local-aware load balancing. Can be configured to use other routing strategies.</p>
+<h3 id="traffic-and-request-routing">Traffic and Request Routing<a aria-hidden="true" class="anchor-heading icon-link" href="#traffic-and-request-routing"></a></h3>
+<p>Sophisticated routing rules since it can understand L7 protocols like HTTP/1 or HTTp/2</p>
+<h3 id="traffic-shifting-and-shadowing">Traffic Shifting and Shadowing<a aria-hidden="true" class="anchor-heading icon-link" href="#traffic-shifting-and-shadowing"></a></h3>
+<p>Envoy can split traffic based on weight and also move copy of traffic to certain version( only a copy of the traffic the real flow still can use the other version)</p>
+<h3 id="network-resilience">Network Resilience<a aria-hidden="true" class="anchor-heading icon-link" href="#network-resilience"></a></h3>
+<p>Retries, timeouts, Health checks can be configured in Envoy.</p>
+<h3 id="metrics">Metrics<a aria-hidden="true" class="anchor-heading icon-link" href="#metrics"></a></h3>
+<p>It can generate a lot of metrics</p>
+<h3 id="tracing">Tracing<a aria-hidden="true" class="anchor-heading icon-link" href="#tracing"></a></h3>
+<p>It will generate x-request-id header to trace traffic.</p>
+<h3 id="tls-and-mutul-tls-tls-termination">Tls and Mutul Tls, Tls termination<a aria-hidden="true" class="anchor-heading icon-link" href="#tls-and-mutul-tls-tls-termination"></a></h3>
+<h3 id="rate-limiting">Rate limiting<a aria-hidden="true" class="anchor-heading icon-link" href="#rate-limiting"></a></h3>
+<h2 id="documents">Documents<a aria-hidden="true" class="anchor-heading icon-link" href="#documents"></a></h2>
+<p><a href="https://envoyproxy.io">https://envoyproxy.io</a> ---> the main place for envoy
+<a href="https://www.envoyproxy.io/docs/envoy/v1.27.0/intro/arch_overview/intro/terminology">https://www.envoyproxy.io/docs/envoy/v1.27.0/intro/arch_overview/intro/terminology</a> --> docs</p>

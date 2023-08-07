@@ -1,0 +1,1135 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1691370818153,
+      "created": 1691370818153,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "jb6glaqzhtlu81fjsdvclge",
+        "0e4vo426e86vqr9gtgsayz7",
+        "c1bs7wsjfbhb0zipaywqv1"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "c1bs7wsjfbhb0zipaywqv1": {
+      "id": "c1bs7wsjfbhb0zipaywqv1",
+      "title": "Tutorial",
+      "desc": "",
+      "updated": 1658931733078,
+      "created": 1654223767390,
+      "currentStep": 0,
+      "totalSteps": 0,
+      "custom": {
+        "currentStep": 0,
+        "totalSteps": 0
+      },
+      "fname": "tutorial",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "35465334039ba0d581fd2b0984e19c5a",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial.one",
+          "position": {
+            "start": {
+              "line": 61,
+              "column": 9,
+              "offset": 2424
+            },
+            "end": {
+              "line": 61,
+              "column": 25,
+              "offset": 2440
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial.one"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial"
+          }
+        },
+        {
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "value": "tutorial"
+        }
+      ],
+      "anchors": {
+        "create-a-note": {
+          "type": "header",
+          "text": "Create a Note",
+          "value": "create-a-note",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "find-a-note": {
+          "type": "header",
+          "text": "Find a Note",
+          "value": "find-a-note",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        },
+        "organize-your-notes": {
+          "type": "header",
+          "text": "Organize your Notes",
+          "value": "organize-your-notes",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        },
+        "create-a-link": {
+          "type": "header",
+          "text": "Create a link",
+          "value": "create-a-link",
+          "line": 47,
+          "column": 0,
+          "depth": 2
+        },
+        "navigate-a-link": {
+          "type": "header",
+          "text": "Navigate a link",
+          "value": "navigate-a-link",
+          "line": 59,
+          "column": 0,
+          "depth": 2
+        },
+        "refactor-a-note": {
+          "type": "header",
+          "text": "Refactor a Note",
+          "value": "refactor-a-note",
+          "line": 67,
+          "column": 0,
+          "depth": 2
+        },
+        "conclusion": {
+          "type": "header",
+          "text": "Conclusion",
+          "value": "conclusion",
+          "line": 76,
+          "column": 0,
+          "depth": 2
+        },
+        "next-steps": {
+          "type": "header",
+          "text": "Next Steps",
+          "value": "next-steps",
+          "line": 82,
+          "column": 0,
+          "depth": 2
+        },
+        "community": {
+          "type": "header",
+          "text": "Community",
+          "value": "community",
+          "line": 104,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "root",
+      "data": {}
+    },
+    "0e4vo426e86vqr9gtgsayz7": {
+      "id": "0e4vo426e86vqr9gtgsayz7",
+      "title": "Programming",
+      "desc": "",
+      "updated": 1689731248831,
+      "created": 1689731248831,
+      "custom": {},
+      "fname": "Programming",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "16a390f6a46c17b68c00943d8ab73ce6",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "a0m2emgt2awqiogsja5c2z9"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "a0m2emgt2awqiogsja5c2z9": {
+      "id": "a0m2emgt2awqiogsja5c2z9",
+      "title": "Go",
+      "desc": "The upcoming language",
+      "updated": 1689731277348,
+      "created": 1689731261171,
+      "custom": {},
+      "fname": "Programming.Go",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "228d13fb2964073d56b535d0504e0d01",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "0e4vo426e86vqr9gtgsayz7",
+      "data": {}
+    },
+    "jb6glaqzhtlu81fjsdvclge": {
+      "id": "jb6glaqzhtlu81fjsdvclge",
+      "title": "Container",
+      "desc": "",
+      "updated": 1689731805496,
+      "created": 1689730962028,
+      "custom": {},
+      "fname": "Container",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "dafd119a4dfd1abf0ac52f4cfb100d99",
+      "links": [],
+      "anchors": {
+        "container": {
+          "type": "header",
+          "text": "Container",
+          "value": "container",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "fg4zd4onhild1u1uhv2h2ju",
+        "a8fonrf8m9s13hepfwy80rr",
+        "3ukzhpbja7b45bk45mw994z"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "3ukzhpbja7b45bk45mw994z": {
+      "id": "3ukzhpbja7b45bk45mw994z",
+      "title": "tools",
+      "desc": "Tools used in the Container world",
+      "updated": 1689731641278,
+      "created": 1689731025978,
+      "custom": {},
+      "fname": "Container.tools",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "a4f17333c889381263de481e1ce35a29",
+      "links": [],
+      "anchors": {
+        "tools": {
+          "type": "header",
+          "text": "Tools",
+          "value": "tools",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "jwiz5cdow3v3as3chdc0j9f"
+      ],
+      "parent": "jb6glaqzhtlu81fjsdvclge",
+      "data": {}
+    },
+    "jwiz5cdow3v3as3chdc0j9f": {
+      "id": "jwiz5cdow3v3as3chdc0j9f",
+      "title": "Validation",
+      "desc": "Validate all",
+      "updated": 1689733088223,
+      "created": 1689732416235,
+      "custom": {},
+      "fname": "Container.tools.Validation",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "38bab247869396670894e0fd48635c09",
+      "links": [],
+      "anchors": {
+        "validation": {
+          "type": "header",
+          "text": "Validation",
+          "value": "validation",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "validating-istio-tools": {
+          "type": "header",
+          "text": "Validating Istio tools",
+          "value": "validating-istio-tools",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "3ukzhpbja7b45bk45mw994z",
+      "data": {}
+    },
+    "a8fonrf8m9s13hepfwy80rr": {
+      "id": "a8fonrf8m9s13hepfwy80rr",
+      "title": "kubernetes",
+      "desc": "",
+      "updated": 1689731688310,
+      "created": 1689731654896,
+      "custom": {},
+      "fname": "Container.kubernetes",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d1c9b7511fc147ae06d6919d05573b05",
+      "links": [],
+      "anchors": {
+        "kubernetes": {
+          "type": "header",
+          "text": "Kubernetes",
+          "value": "kubernetes",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "gbadp33e8k0kkmvcnic0ucs",
+        "9w063ps0rewi5dfc5ryfnq6",
+        "jr2r8ru36ic25wbu753nhho"
+      ],
+      "parent": "jb6glaqzhtlu81fjsdvclge",
+      "data": {}
+    },
+    "jr2r8ru36ic25wbu753nhho": {
+      "id": "jr2r8ru36ic25wbu753nhho",
+      "title": "tools",
+      "desc": "Kubernetes based tools",
+      "updated": 1690647362028,
+      "created": 1689759424172,
+      "custom": {},
+      "fname": "Container.kubernetes.tools",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "03bb88f77ff6a32e31c85cc052da8627",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "Container.kubernetes.tools",
+            "id": "jr2r8ru36ic25wbu753nhho",
+            "vaultName": "Dendron"
+          },
+          "value": "Container.kubernetes.tools.K9",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 27,
+              "offset": 241
+            },
+            "end": {
+              "line": 8,
+              "column": 60,
+              "offset": 274
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "Container.kubernetes.tools.K9"
+          }
+        }
+      ],
+      "anchors": {
+        "kubernetes-tools": {
+          "type": "header",
+          "text": "Kubernetes Tools",
+          "value": "kubernetes-tools",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "management": {
+          "type": "header",
+          "text": "Management",
+          "value": "management",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "k9": {
+          "type": "header",
+          "text": "K9",
+          "value": "k9",
+          "line": 13,
+          "column": 0,
+          "depth": 3
+        },
+        "shell": {
+          "type": "header",
+          "text": "Shell",
+          "value": "shell",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "kubectx": {
+          "type": "header",
+          "text": "Kubectx",
+          "value": "kubectx",
+          "line": 18,
+          "column": 0,
+          "depth": 3
+        },
+        "kubens": {
+          "type": "header",
+          "text": "Kubens",
+          "value": "kubens",
+          "line": 31,
+          "column": 0,
+          "depth": 3
+        },
+        "kube-ps1": {
+          "type": "header",
+          "text": "Kube-ps1",
+          "value": "kube-ps1",
+          "line": 34,
+          "column": 0,
+          "depth": 3
+        },
+        "stern": {
+          "type": "header",
+          "text": "Stern",
+          "value": "stern",
+          "line": 47,
+          "column": 0,
+          "depth": 3
+        },
+        "popeye": {
+          "type": "header",
+          "text": "Popeye",
+          "value": "popeye",
+          "line": 53,
+          "column": 0,
+          "depth": 3
+        },
+        "zsh-plugins": {
+          "type": "header",
+          "text": "zsh plugins",
+          "value": "zsh-plugins",
+          "line": 59,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [
+        "y6obkhf6dd0ad6klxp7ejdt",
+        "m3lxb19icc4w8b1qoqvb0m0"
+      ],
+      "parent": "a8fonrf8m9s13hepfwy80rr",
+      "data": {}
+    },
+    "m3lxb19icc4w8b1qoqvb0m0": {
+      "id": "m3lxb19icc4w8b1qoqvb0m0",
+      "title": "Kustomize",
+      "desc": "An important tool that work with kubectl",
+      "updated": 1689762306354,
+      "created": 1689762166161,
+      "custom": {},
+      "fname": "Container.kubernetes.tools.Kustomize",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "73d7b065a5b178692203292ee721b23f",
+      "links": [],
+      "anchors": {
+        "kustomize": {
+          "type": "header",
+          "text": "Kustomize",
+          "value": "kustomize",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "documentation": {
+          "type": "header",
+          "text": "Documentation",
+          "value": "documentation",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "jr2r8ru36ic25wbu753nhho",
+      "data": {}
+    },
+    "y6obkhf6dd0ad6klxp7ejdt": {
+      "id": "y6obkhf6dd0ad6klxp7ejdt",
+      "title": "K9",
+      "desc": "",
+      "updated": 1691232334616,
+      "created": 1689760019420,
+      "custom": {},
+      "fname": "Container.kubernetes.tools.K9",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "7478fcdfef3e3267a81e3644362609c8",
+      "links": [
+        {
+          "from": {
+            "fname": "Container.kubernetes.tools",
+            "id": "jr2r8ru36ic25wbu753nhho",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 27,
+              "offset": 241
+            },
+            "end": {
+              "line": 8,
+              "column": 60,
+              "offset": 274
+            },
+            "indent": []
+          },
+          "value": "Container.kubernetes.tools.K9"
+        }
+      ],
+      "anchors": {
+        "k9": {
+          "type": "header",
+          "text": "K9",
+          "value": "k9",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "installation": {
+          "type": "header",
+          "text": "Installation",
+          "value": "installation",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "experience": {
+          "type": "header",
+          "text": "Experience",
+          "value": "experience",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "jr2r8ru36ic25wbu753nhho",
+      "data": {}
+    },
+    "9w063ps0rewi5dfc5ryfnq6": {
+      "id": "9w063ps0rewi5dfc5ryfnq6",
+      "title": "Service mesh",
+      "desc": "",
+      "updated": 1691355996455,
+      "created": 1690718362197,
+      "custom": {},
+      "fname": "Container.kubernetes.Service mesh",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4b8dc737e98e98ccf4ef35dec4c4ac16",
+      "links": [],
+      "anchors": {
+        "service-mesh": {
+          "type": "header",
+          "text": "Service Mesh",
+          "value": "service-mesh",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "istio": {
+          "type": "header",
+          "text": "Istio",
+          "value": "istio",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "installation": {
+          "type": "header",
+          "text": "Installation",
+          "value": "installation",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "component": {
+          "type": "header",
+          "text": "Component",
+          "value": "component",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "traffic-entry-point": {
+          "type": "header",
+          "text": "Traffic Entry point",
+          "value": "traffic-entry-point",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "concept": {
+          "type": "header",
+          "text": "Concept",
+          "value": "concept",
+          "line": 21,
+          "column": 0,
+          "depth": 3
+        },
+        "envoy-proxy": {
+          "type": "header",
+          "text": "Envoy Proxy",
+          "value": "envoy-proxy",
+          "line": 24,
+          "column": 0,
+          "depth": 4
+        },
+        "concept-1": {
+          "type": "header",
+          "text": "Concept",
+          "value": "concept-1",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "apis": {
+          "type": "header",
+          "text": "Apis",
+          "value": "apis",
+          "line": 32,
+          "column": 0,
+          "depth": 2
+        },
+        "ingress-gateway": {
+          "type": "header",
+          "text": "Ingress Gateway",
+          "value": "ingress-gateway",
+          "line": 39,
+          "column": 0,
+          "depth": 3
+        },
+        "gateway": {
+          "type": "header",
+          "text": "Gateway",
+          "value": "gateway",
+          "line": 58,
+          "column": 0,
+          "depth": 3
+        },
+        "virtual-service": {
+          "type": "header",
+          "text": "Virtual Service",
+          "value": "virtual-service",
+          "line": 77,
+          "column": 0,
+          "depth": 3
+        },
+        "destination-rule": {
+          "type": "header",
+          "text": "Destination Rule",
+          "value": "destination-rule",
+          "line": 88,
+          "column": 0,
+          "depth": 3
+        },
+        "service-entry": {
+          "type": "header",
+          "text": "Service Entry",
+          "value": "service-entry",
+          "line": 92,
+          "column": 0,
+          "depth": 3
+        },
+        "sidecars": {
+          "type": "header",
+          "text": "sidecars",
+          "value": "sidecars",
+          "line": 95,
+          "column": 0,
+          "depth": 3
+        },
+        "document": {
+          "type": "header",
+          "text": "Document",
+          "value": "document",
+          "line": 104,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "1x0zf84gbbfnd1owvoeciml"
+      ],
+      "parent": "a8fonrf8m9s13hepfwy80rr",
+      "data": {}
+    },
+    "1x0zf84gbbfnd1owvoeciml": {
+      "id": "1x0zf84gbbfnd1owvoeciml",
+      "title": "Envoy",
+      "desc": "",
+      "updated": 1691352642351,
+      "created": 1691234611028,
+      "custom": {},
+      "fname": "Container.kubernetes.Service mesh.Envoy",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b2bd8a25b112863fe9e9aa803ecb054c",
+      "links": [],
+      "anchors": {
+        "envoy": {
+          "type": "header",
+          "text": "Envoy",
+          "value": "envoy",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "concept": {
+          "type": "header",
+          "text": "Concept",
+          "value": "concept",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "feature": {
+          "type": "header",
+          "text": "Feature",
+          "value": "feature",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "service-discovery": {
+          "type": "header",
+          "text": "Service Discovery",
+          "value": "service-discovery",
+          "line": 24,
+          "column": 0,
+          "depth": 3
+        },
+        "load-balancing": {
+          "type": "header",
+          "text": "Load Balancing",
+          "value": "load-balancing",
+          "line": 27,
+          "column": 0,
+          "depth": 3
+        },
+        "traffic-and-request-routing": {
+          "type": "header",
+          "text": "Traffic and Request Routing",
+          "value": "traffic-and-request-routing",
+          "line": 30,
+          "column": 0,
+          "depth": 3
+        },
+        "traffic-shifting-and-shadowing": {
+          "type": "header",
+          "text": "Traffic Shifting and Shadowing",
+          "value": "traffic-shifting-and-shadowing",
+          "line": 33,
+          "column": 0,
+          "depth": 3
+        },
+        "network-resilience": {
+          "type": "header",
+          "text": "Network Resilience",
+          "value": "network-resilience",
+          "line": 36,
+          "column": 0,
+          "depth": 3
+        },
+        "metrics": {
+          "type": "header",
+          "text": "Metrics",
+          "value": "metrics",
+          "line": 39,
+          "column": 0,
+          "depth": 3
+        },
+        "tracing": {
+          "type": "header",
+          "text": "Tracing",
+          "value": "tracing",
+          "line": 42,
+          "column": 0,
+          "depth": 3
+        },
+        "tls-and-mutul-tls-tls-termination": {
+          "type": "header",
+          "text": "Tls and Mutul Tls, Tls termination",
+          "value": "tls-and-mutul-tls-tls-termination",
+          "line": 45,
+          "column": 0,
+          "depth": 3
+        },
+        "rate-limiting": {
+          "type": "header",
+          "text": "Rate limiting",
+          "value": "rate-limiting",
+          "line": 47,
+          "column": 0,
+          "depth": 3
+        },
+        "documents": {
+          "type": "header",
+          "text": "Documents",
+          "value": "documents",
+          "line": 50,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "9w063ps0rewi5dfc5ryfnq6",
+      "data": {}
+    },
+    "gbadp33e8k0kkmvcnic0ucs": {
+      "id": "gbadp33e8k0kkmvcnic0ucs",
+      "title": "Kind",
+      "desc": "Local cluster tool",
+      "updated": 1690635927681,
+      "created": 1690635610877,
+      "custom": {},
+      "fname": "Container.Kubernetes.Kind",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "f62a82e25b448dd5d5b1e945d8d99d3e",
+      "links": [],
+      "anchors": {
+        "kind": {
+          "type": "header",
+          "text": "Kind",
+          "value": "kind",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "usage": {
+          "type": "header",
+          "text": "Usage",
+          "value": "usage",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "cli": {
+          "type": "header",
+          "text": "Cli",
+          "value": "cli",
+          "line": 15,
+          "column": 0,
+          "depth": 3
+        },
+        "document": {
+          "type": "header",
+          "text": "Document",
+          "value": "document",
+          "line": 28,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "a8fonrf8m9s13hepfwy80rr",
+      "data": {}
+    },
+    "fg4zd4onhild1u1uhv2h2ju": {
+      "id": "fg4zd4onhild1u1uhv2h2ju",
+      "title": "cluster",
+      "desc": "GitOps Cluster",
+      "updated": 1689734742672,
+      "created": 1689734234547,
+      "custom": {},
+      "fname": "Container.cluster",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "bb4c4b9d377c6c8fcb980af99862d2ae",
+      "links": [],
+      "anchors": {
+        "cluster": {
+          "type": "header",
+          "text": "Cluster",
+          "value": "cluster",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "local-deployment": {
+          "type": "header",
+          "text": "Local Deployment",
+          "value": "local-deployment",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "ob7v5brspd482q871j24k6x"
+      ],
+      "parent": "jb6glaqzhtlu81fjsdvclge",
+      "data": {}
+    },
+    "ob7v5brspd482q871j24k6x": {
+      "id": "ob7v5brspd482q871j24k6x",
+      "title": "tools",
+      "desc": "The cluster based tools local or remote",
+      "updated": 1689760921029,
+      "created": 1689760534098,
+      "custom": {},
+      "fname": "Container.cluster.tools",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "be61b556b91c756381254a337dc5d7ff",
+      "links": [],
+      "anchors": {
+        "tools": {
+          "type": "header",
+          "text": "Tools",
+          "value": "tools",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "kind": {
+          "type": "header",
+          "text": "KinD",
+          "value": "kind",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "installation": {
+          "type": "header",
+          "text": "Installation",
+          "value": "installation",
+          "line": 13,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "fg4zd4onhild1u1uhv2h2ju",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "jb6glaqzhtlu81fjsdvclge",
+        "0e4vo426e86vqr9gtgsayz7",
+        "c1bs7wsjfbhb0zipaywqv1"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+    }
+  ],
+  "noteIndex": {
+    "id": "root",
+    "title": "root",
+    "desc": "",
+    "updated": 1605266684036,
+    "created": 1595961348801,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    },
+    "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+    "links": [],
+    "anchors": {},
+    "children": [
+      "jb6glaqzhtlu81fjsdvclge",
+      "0e4vo426e86vqr9gtgsayz7",
+      "c1bs7wsjfbhb0zipaywqv1"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+  },
+  "vaults": [
+    {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    }
+  ]
+}
