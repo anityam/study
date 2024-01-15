@@ -80,33 +80,29 @@ preview:
     enableKatex: true
     automaticallyShowPreview: false
 publishing:
+    assetsPrefix: /study
     enableFMTitle: true
     enableNoteTitleForLink: true
     enablePrettyRefs: true
     enableKatex: true
-    assetsPrefix: /study
     copyAssets: true
+    siteUrl: https://anityam.github.io
     siteHierarchies:
         - root
-    enableSiteLastModified: true
-    siteRootDir: docs
-    siteUrl: https://anityam.github.io
-    enableFrontmatterTags: true
-    enableHashesForFMTags: false
-    enableRandomlyColoredTags: true
-    duplicateNoteBehavior:
-        action: useVault
-        payload:
-            - note
     writeStubs: false
+    siteRootDir: docs
     seo:
-        title: Study
-        description: Knowledge
+        title: Dendron
+        description: Personal Knowledge Space
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub
         editBranch: main
         editViewMode: tree
-    enablePrettyLinks: true
-    theme: dark
+    enableSiteLastModified: true
+    enableFrontmatterTags: true
+    enableHashesForFMTags: false
+    enableRandomlyColoredTags: true
     enableTaskNotes: true
+    enablePrettyLinks: true
+    searchMode: search
