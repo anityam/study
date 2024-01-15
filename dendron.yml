@@ -86,7 +86,7 @@ publishing:
     enablePrettyRefs: true
     enableKatex: true
     copyAssets: true
-    siteUrl: https://anityam.github.io/study/
+    siteUrl: https://anityam.github.io
     siteHierarchies:
         - root
     writeStubs: false
