@@ -1,6 +1,6 @@
 ---
 id: tpze4uuw6xjq2id69dy1nw5
-title: Flux
+title: flux
 desc: ''
 updated: 1705325448397
 created: 1705325162586
