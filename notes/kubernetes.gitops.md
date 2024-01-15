@@ -1,6 +1,6 @@
 ---
 id: 6vhtnfow7qg6idyrfukhql8
-title: Gitops
+title: gitops
 desc: ''
 updated: 1705354792339
 created: 1705326094609
