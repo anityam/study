@@ -2,7 +2,7 @@
 id: 6vhtnfow7qg6idyrfukhql8
 title: Gitops
 desc: ''
-updated: 1705336152951
+updated: 1705354792339
 created: 1705326094609
 ---
 # GitOps
@@ -18,7 +18,13 @@ The core idea of GitOps is having a Git repository that always contains declarat
 ## How it works
 Central repository that holds the environment and application setup. It can be branched out into two separate repository or a single git repository. 
 
+## Deployment Style
+### Pull Based Deployment
+In this system there is an operator making sure to sync the environment. So a developer makes changes to the application and new images is build. The operator constantly monitors the image or the environment and will update to the latest code when it sees the new image.
+
+### Push Based Deployment
+This is a deployment style where a push of code to the application triggers a series of deployment procedures which finally results in environment change in the cluster.
 
 
 Reading:
-[GitOPs pdf](./gitops.pdf)
+[GitOps pdf](./gitops.pdf)
