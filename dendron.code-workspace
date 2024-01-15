@@ -1,8 +1,10 @@
 {
   "folders": [
     {
-      "path": "notes",
-      "name": "Dendron"
+      "path": "notes"
+    },
+    {
+      "path": "."
     }
   ],
   "settings": {
