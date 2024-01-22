@@ -1,0 +1,14 @@
+<h1 id="validation">Validation<a aria-hidden="true" class="anchor-heading icon-link" href="#validation"></a></h1>
+<h1 id="validation-1">Validation<a aria-hidden="true" class="anchor-heading icon-link" href="#validation-1"></a></h1>
+<p>While working with the declarative language the bigger problem is with validation. The ecosystem of K8 is increasing with ever increasing list of good CRD(custom resource definition). As the declaration gets bigger so does the change of human error.
+We will look at some validation tools and how they can be used.</p>
+<h2 id="code">Code<a aria-hidden="true" class="anchor-heading icon-link" href="#code"></a></h2>
+<p><a href="https://github.com/anityam/validation">https://github.com/anityam/validation</a></p>
+<h2 id="scenario">Scenario<a aria-hidden="true" class="anchor-heading icon-link" href="#scenario"></a></h2>
+<p>In this topic we will be evaluating tools to validate istio and fluxCD crd's. </p>
+<h2 id="tools">Tools<a aria-hidden="true" class="anchor-heading icon-link" href="#tools"></a></h2>
+<h2 id="requirement">Requirement<a aria-hidden="true" class="anchor-heading icon-link" href="#requirement"></a></h2>
+<p>To validate kubernetes based native resources like pod, deployment it is easier as the definition of those resources are build in the installation but requires for other resource validation we will need to get the definitions of the crd's declaration for local use or access to a cluster with the CRD installed.
+In a gitOps approach validation is good to be done locally before committing it to a automation framework like fluxCD. Each custom resource definition should have a resource definition which can be used.</p>
+<h3 id="kubectl-validate">Kubectl validate<a aria-hidden="true" class="anchor-heading icon-link" href="#kubectl-validate"></a></h3>
+<p><a href="https://github.com/kubernetes-sigs/kubectl-validate">kubectl validate</a> is an open source tool built by </p>

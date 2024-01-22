@@ -1,0 +1,51 @@
+<h1 id="flux">flux<a aria-hidden="true" class="anchor-heading icon-link" href="#flux"></a></h1>
+<h1 id="flux-1">Flux<a aria-hidden="true" class="anchor-heading icon-link" href="#flux-1"></a></h1>
+<p>Flux is a tool for keeping Kubernetes clusters in sync with sources of configuration (like Git repositories), and automating updates to configuration when there is new code to deploy.</p>
+<h2 id="how-it-works">How it works<a aria-hidden="true" class="anchor-heading icon-link" href="#how-it-works"></a></h2>
+<p>It syncs the Git based kubernetes declarative code with the kubernetes cluster. It deploys operators in cluster who constantly monitor the versioned controlled repository.</p>
+<h2 id="gitops-toolkit">GitOps toolkit<a aria-hidden="true" class="anchor-heading icon-link" href="#gitops-toolkit"></a></h2>
+<h3 id="source">Source<a aria-hidden="true" class="anchor-heading icon-link" href="#source"></a></h3>
+<p>The main role of the source is to provide an interface for artifact acquisitions. This contains the location of source of truth and a way to connect to it. For example</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> source.toolkit.fluxcd.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> GitRepository
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> flux<span class="token punctuation">-</span>system
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> flux<span class="token punctuation">-</span>system
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">interval</span><span class="token punctuation">:</span> 1m0s
+  <span class="token key atrule">ref</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branch</span><span class="token punctuation">:</span> main
+  <span class="token key atrule">secretRef</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> flux<span class="token punctuation">-</span>system
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> ssh<span class="token punctuation">:</span>//git@github.com/anityam/fluxy
+</code></pre>
+<p>  This above declaration contains the definition of a <a href="https://github.com/anityam/fluxy">git repository</a> over ssh which is synced at an interval of 1m(defaults to 5m).</p>
+<p>  The source produces an artifact that is consumed by other flux components to perform actions.All sources are specified as Custom Resources in a Kubernetes cluster, examples of sources are GitRepository, OCIRepository, HelmRepository and Bucket resources. More reading on <a href="https://fluxcd.io/flux/components/source/">source resource</a> and <a href="https://github.com/fluxcd/source-controller/tree/main/docs/spec">spec</a></p>
+<p>  Features:</p>
+<pre><code>1. Validate source definitions
+2. Authenticate to sources (SSH, user/password, API token)
+3. Validate source authenticity (PGP)
+4. Detect source changes based on update policies (semver)
+5. Fetch resources on-demand and on-a-schedule
+6. Package the fetched resources into a well-known format (tar.gz, yaml)
+7. Make the artifacts addressable by their source identifier (sha, version, ts)
+8. Make the artifacts available in-cluster to interested 3rd parties
+9. Notify interested 3rd parties of source changes and availability (status conditions, events, hooks)
+</code></pre>
+<h2 id="reconciliation">Reconciliation<a aria-hidden="true" class="anchor-heading icon-link" href="#reconciliation"></a></h2>
+<p>The process to make sure a given state matches a desired state which is declared in a versioned controlled repo.</p>
+<ol>
+<li><strong>HelmRelease reconciliation</strong>: ensures the state of the Helm release matches what is defined in the resource, performs a release if this is not the case (including revision changes of a HelmChart resource).</li>
+<li><strong>Bucket reconciliation</strong>: downloads and archives the contents of the declared bucket on a given interval and stores this as an artifact, records the observed revision of the artifact and the artifact itself in the status of resource.</li>
+<li><strong>Kustomization reconciliation</strong>: ensures the state of the application deployed on a cluster matches the resources defined in a Git or OCI repository or S3 bucket.</li>
+</ol>
+<h2 id="kustomization">Kustomization<a aria-hidden="true" class="anchor-heading icon-link" href="#kustomization"></a></h2>
+<p>Kustomization CRD is local set of overlays that flux needs to reconcile to the cluster. Reconcile runs every 5m but this can be adjusted. If you make any changes to the cluster using kubectl edit/patch/delete, they will be promptly reverted. You either suspend the reconciliation or push your changes to a Git repository.</p>
+<p>For more information, take a look at the <a href="https://fluxcd.io/flux/faq/#kustomize-questions">Kustomize FAQ</a> and the <a href="https://fluxcd.io/flux/components/kustomize/kustomizations/">Kustomization CRD</a>.</p>
+<h2 id="bootstrap">Bootstrap<a aria-hidden="true" class="anchor-heading icon-link" href="#bootstrap"></a></h2>
+<p>Bootstrapping flux to a cluster i.e installing flux component in gitOps manner. Flux manages itself through git similar to other application and infrastructure management. The manifests are applied to the cluster, a GitRepository and Kustomization are created for the Flux components, then the manifests are pushed to an existing Git repository (or a new one is created).  </p>
+<p>For more information, take a look at the <a href="https://fluxcd.io/flux/installation/bootstrap/">bootstrap documentation</a>.</p>
+<h2 id="demo">Demo<a aria-hidden="true" class="anchor-heading icon-link" href="#demo"></a></h2>
+<p><a href="https://github.com/anityam/fluxy">Fluxy</a></p>
+<h2 id="reading">Reading<a aria-hidden="true" class="anchor-heading icon-link" href="#reading"></a></h2>
+<p><a href="https://fluxcd.io/flux/">Documentation</a></p>
