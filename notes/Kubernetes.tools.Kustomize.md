@@ -1,7 +1,7 @@
 ---
 id: m3lxb19icc4w8b1qoqvb0m0
 title: Kustomize
-desc: 'An important tool that work with kubectl'
+desc: An important tool that work with kubectl
 updated: 1689762306354
 created: 1689762166161
 ---

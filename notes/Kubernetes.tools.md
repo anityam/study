@@ -1,7 +1,7 @@
 ---
 id: jr2r8ru36ic25wbu753nhho
 title: tools
-desc: 'Kubernetes based tools'
+desc: Kubernetes based tools
 updated: 1690647362028
 created: 1689759424172
 ---
@@ -12,7 +12,7 @@ This section is a subset of Containers tools where we will entirely discuss upon
 The tools that can be used to manage the kubernetes cluster itself.
 
 ### K9
-Tool to manage kubernetes.[[Container.kubernetes.tools.K9]]
+Tool to manage kubernetes.[[Kubernetes.tools.K9]]
 
 
 ## Shell

@@ -1,7 +1,7 @@
 ---
 id: gbadp33e8k0kkmvcnic0ucs
 title: Kind
-desc: 'Local cluster tool'
+desc: Local cluster tool
 updated: 1690635927681
 created: 1690635610877
 ---

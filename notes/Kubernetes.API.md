@@ -2,7 +2,7 @@
 id: 88zf50v4q8nkcr279uqsr9i
 title: API
 desc: ''
-updated: 1692921336282
+updated: 1705890382435
 created: 1692832536320
 ---
 # Kubernetes API
@@ -45,6 +45,13 @@ API server can be queried through the REST http calls so once the api server end
 kubectl api-resources
 kubectl api-versions
 ```
+
+## API Operation
+###  Cluster
+Creating a cluster for testing API code can be found at [kubernetesGo](https://github.com/anityam/kubernetesGo).
+
+### API calls
+In daily 
 
 ## Request
 The request once done is passed through a chain of filters which is processed by [DefaultBuildHandlerChain](https://github.com/kubernetes/kubernetes/blob/2cb31c9333adca3f212920d7a1a4e0a3a239598d/staging/src/k8s.io/apiserver/pkg/server/config.go#L790C6-L790C30). 
