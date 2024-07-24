@@ -1,0 +1,63 @@
+<h1 id="api">API<a aria-hidden="true" class="anchor-heading icon-link" href="#api"></a></h1>
+<h1 id="kubernetes-api">Kubernetes API<a aria-hidden="true" class="anchor-heading icon-link" href="#kubernetes-api"></a></h1>
+<p>Kubernetes api is the main communication channel for the kubernetes cluster. It is a part of the <code>kubernetes control plain</code>. This is the heart of communication</p>
+<h2 id="function">Function<a aria-hidden="true" class="anchor-heading icon-link" href="#function"></a></h2>
+<ol>
+<li>Serve the kubernetes API for state change
+<ol>
+<li>Reading state : get,list and streaming</li>
+<li>Mutating state: create, update delete</li>
+</ol>
+</li>
+<li>Proxy cluster component so other tools can use them like pod exec by kubectl or log streaming etc</li>
+</ol>
+<h2 id="how">How<a aria-hidden="true" class="anchor-heading icon-link" href="#how"></a></h2>
+<p>The main concept is api calls in kubernetes are <code>rest API</code> based calls exposed through https with json or <code>protobuf</code> payload. The rest method used are GET,POST,PUT, PATCH, DELETE.</p>
+<h2 id="what">What<a aria-hidden="true" class="anchor-heading icon-link" href="#what"></a></h2>
+<p>The terms used</p>
+<ol>
+<li>Kind: All resource types have a concrete representation (their object schema) which is called a kind --> or a simple definition is json-schema of an object
+<ol>
+<li>persistent object like pod, service etc</li>
+<li>list of persistent objects like pods </li>
+<li>Simple --> Special purpose kinds used like APIGroup or APIResource , or simply a specific action on a persistent resource(object)</li>
+</ol>
+</li>
+<li>Group: Collection of related kinds </li>
+<li>Version: The version of apiGroup to be used v1alpha1,  v1beta1 etc</li>
+<li>Resources: These are the endpoints of the kubernetes api api/{resource}. This can also be termed as an item of a <code>kind</code>
+<pre><code>kubectl api-resources
+kubectl api-resources -v 6 # -v 6 means "extra verbose logging"
+</code></pre>
+</li>
+<li>Objects: This is similar to kind which means persistent entities with intent (desired state) and the status (actual state) of the cluster. So it has some defined fields.
+<pre><code>kubectl explain  # commands helps with 
+</code></pre>
+</li>
+</ol>
+<h2 id="declare">Declare<a aria-hidden="true" class="anchor-heading icon-link" href="#declare"></a></h2>
+<p>Declarative state in kubernetes. <code>Spec</code> describes what you want.<code>Status</code> is the current state of the resource you described in the <code>spec</code>.</p>
+<h2 id="query">Query<a aria-hidden="true" class="anchor-heading icon-link" href="#query"></a></h2>
+<p>API server can be queried through the REST http calls so once the api server endpoint is exposed we can query the
+<code>/apis/group/version/{namespace/namespace_name}/resource</code> --> namespaced resources need the namespace. For more info on the api-resources{endpoint}</p>
+<pre class="language-bash"><code class="language-bash">kubectl api-resources
+kubectl api-versions
+</code></pre>
+<h2 id="api-operation">API Operation<a aria-hidden="true" class="anchor-heading icon-link" href="#api-operation"></a></h2>
+<h3 id="cluster">Cluster<a aria-hidden="true" class="anchor-heading icon-link" href="#cluster"></a></h3>
+<p>Creating a cluster for testing API code can be found at <a href="https://github.com/anityam/kubernetesGo">kubernetesGo</a>.</p>
+<h3 id="api-calls">API calls<a aria-hidden="true" class="anchor-heading icon-link" href="#api-calls"></a></h3>
+<p>In daily </p>
+<h2 id="request">Request<a aria-hidden="true" class="anchor-heading icon-link" href="#request"></a></h2>
+<p>The request once done is passed through a chain of filters which is processed by <a href="https://github.com/kubernetes/kubernetes/blob/2cb31c9333adca3f212920d7a1a4e0a3a239598d/staging/src/k8s.io/apiserver/pkg/server/config.go#L790C6-L790C30">DefaultBuildHandlerChain</a>. </p>
+<h2 id="reading">Reading<a aria-hidden="true" class="anchor-heading icon-link" href="#reading"></a></h2>
+<p><a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#:~:text=Kubernetes%20API%20terminology&#x26;text=All%20resource%20types%20have%20a,also%20usually%20represents%20an%20object">https://kubernetes.io/docs/reference/using-api/api-concepts/#:~:text=Kubernetes%20API%20terminology&#x26;text=All%20resource%20types%20have%20a,also%20usually%20represents%20an%20object</a> --> API
+<a href="https://iximiuz.com/en/posts/kubernetes-api-structure-and-terminology/">https://iximiuz.com/en/posts/kubernetes-api-structure-and-terminology/</a> --> Terminologies</p>
+<h2 id="working-repo">Working repo<a aria-hidden="true" class="anchor-heading icon-link" href="#working-repo"></a></h2>
+<p><a href="https://github.com/anityam/kube-programming">https://github.com/anityam/kube-programming</a> </p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/study/notes/ognetf4t332vazgadsvn0ir">API Request</a></li>
+<li><a href="/study/notes/x6d83azszdspwhrs6bwgsxb">Kind Resource and Groups</a></li>
+</ol>

@@ -1,0 +1,18 @@
+<h1 id="etcd">Etcd<a aria-hidden="true" class="anchor-heading icon-link" href="#etcd"></a></h1>
+<h1 id="etcd-1">Etcd<a aria-hidden="true" class="anchor-heading icon-link" href="#etcd-1"></a></h1>
+<p>This is the defacto storage implementation for the kubernetes cluster. Etcd is a separate project which was adopted by kubernetes community to be used as the backend</p>
+<h2 id="key-concepts-of-etcd">Key concepts of Etcd<a aria-hidden="true" class="anchor-heading icon-link" href="#key-concepts-of-etcd"></a></h2>
+<ol>
+<li>Written in go and has a SDK(<a href="https://pkg.go.dev/go.etcd.io/etcd/clientv3">clientV3</a>)</li>
+<li><code>Watch()</code> API support which is used by kubernetes also <code>gRPC</code> protocols</li>
+<li>Support for time-travel queries through Multi-Version Concurrency Control(<a href="https://en.wikipedia.org/wiki/Multiversion_concurrency_control">MVCC</a>)</li>
+</ol>
+<h2 id="working">Working<a aria-hidden="true" class="anchor-heading icon-link" href="#working"></a></h2>
+<h3 id="key-value-store">Key Value store<a aria-hidden="true" class="anchor-heading icon-link" href="#key-value-store"></a></h3>
+<p>It is like a dictionary {"key":"value"}. </p>
+<h3 id="etcd-server">Etcd server<a aria-hidden="true" class="anchor-heading icon-link" href="#etcd-server"></a></h3>
+<h2 id="more-information">More Information<a aria-hidden="true" class="anchor-heading icon-link" href="#more-information"></a></h2>
+<h3 id="reading">Reading<a aria-hidden="true" class="anchor-heading icon-link" href="#reading"></a></h3>
+<p><a href="https://pierrezemb.fr/posts/notes-about-etcd/">https://pierrezemb.fr/posts/notes-about-etcd/</a></p>
+<h3 id="tools">Tools<a aria-hidden="true" class="anchor-heading icon-link" href="#tools"></a></h3>
+<p><a href="https://hub.docker.com/r/bitnami/etcd/">https://hub.docker.com/r/bitnami/etcd/</a> ---> etcd docker based images</p>

@@ -1,0 +1,24 @@
+<h1 id="gitops">gitops<a aria-hidden="true" class="anchor-heading icon-link" href="#gitops"></a></h1>
+<h1 id="gitops-1">GitOps<a aria-hidden="true" class="anchor-heading icon-link" href="#gitops-1"></a></h1>
+<p>The core idea of GitOps is having a Git repository that always contains declarative descriptions of the infrastructure currently desired in the production environment and an automated process to make the production environment match the described state in the repository. If you want to deploy a new application or update an existing one, you only need to update the repository - the automated process handles everything else. It’s like having cruise control for managing your applications in production.</p>
+<h2 id="why-to-use-gitops">Why to use GitOps<a aria-hidden="true" class="anchor-heading icon-link" href="#why-to-use-gitops"></a></h2>
+<ol>
+<li>Deploy faster and more often: This is the benefit of using version control. </li>
+<li>Easy and fast recovery: Easy to move back to previously known configuration</li>
+<li>Secure: Let tools apply changes to cluster not the developers directly</li>
+<li>Documenting: Easy to watch the git repo for what changes have happen and what are upcoming changes</li>
+</ol>
+<h2 id="how-it-works">How it works<a aria-hidden="true" class="anchor-heading icon-link" href="#how-it-works"></a></h2>
+<p>Central repository that holds the environment and application setup. It can be branched out into two separate repository or a single git repository. </p>
+<h2 id="deployment-style">Deployment Style<a aria-hidden="true" class="anchor-heading icon-link" href="#deployment-style"></a></h2>
+<h3 id="pull-based-deployment">Pull Based Deployment<a aria-hidden="true" class="anchor-heading icon-link" href="#pull-based-deployment"></a></h3>
+<p>In this system there is an operator making sure to sync the environment. So a developer makes changes to the application and new images is build. The operator constantly monitors the image or the environment and will update to the latest code when it sees the new image.</p>
+<h3 id="push-based-deployment">Push Based Deployment<a aria-hidden="true" class="anchor-heading icon-link" href="#push-based-deployment"></a></h3>
+<p>This is a deployment style where a push of code to the application triggers a series of deployment procedures which finally results in environment change in the cluster.</p>
+<p>Reading:
+<a href="/study/./gitops.pdf">GitOps pdf</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/study/notes/tpze4uuw6xjq2id69dy1nw5">flux</a></li>
+</ol>

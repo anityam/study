@@ -1,0 +1,41 @@
+<h1 id="api-request">API Request<a aria-hidden="true" class="anchor-heading icon-link" href="#api-request"></a></h1>
+<h1 id="api-request-1">API Request<a aria-hidden="true" class="anchor-heading icon-link" href="#api-request-1"></a></h1>
+<p>Kubernetes API is a REST Http API. So basic http calls can be made against the Kubernetes API.</p>
+<h2 id="setup">Setup<a aria-hidden="true" class="anchor-heading icon-link" href="#setup"></a></h2>
+<h3 id="kind-cluster">Kind cluster<a aria-hidden="true" class="anchor-heading icon-link" href="#kind-cluster"></a></h3>
+<p>We will be using a kind cluster to setup the kubernetes cluster and make API calls against the kubernetes control plane created in the Kind cluster
+Creating a cluster for testing API code can be found at <a href="https://github.com/anityam/kubernetesGo/blob/main/README.md">kubernetesGo</a>.</p>
+<h2 id="request">Request<a aria-hidden="true" class="anchor-heading icon-link" href="#request"></a></h2>
+<p>Kubectl is the main API client used for interacting with kubernetes API. Kubectl builds and makes the API calls on behalf of the user but to inspect the calls we can use the verbose option with different levels.</p>
+<pre class="language-bash"><code class="language-bash">kubectl get pods -v6
+I0122 <span class="token number">18</span>:26:21.852266   <span class="token number">48957</span> loader.go:395<span class="token punctuation">]</span> Config loaded from file:  ~/.kube/config
+I0122 <span class="token number">18</span>:26:21.878357   <span class="token number">48957</span> round_trippers.go:553<span class="token punctuation">]</span> GET https://127.0.0.1:50107/api?timeout<span class="token operator">=</span>32s <span class="token number">200</span> OK <span class="token keyword">in</span> <span class="token number">24</span> milliseconds
+I0122 <span class="token number">18</span>:26:21.881194   <span class="token number">48957</span> round_trippers.go:553<span class="token punctuation">]</span> GET https://127.0.0.1:50107/apis?timeout<span class="token operator">=</span>32s <span class="token number">200</span> OK <span class="token keyword">in</span> <span class="token number">1</span> milliseconds
+I0122 <span class="token number">18</span>:26:21.890185   <span class="token number">48957</span> round_trippers.go:553<span class="token punctuation">]</span> GET https://127.0.0.1:50107/api/v1/namespaces/default/pods?limit<span class="token operator">=</span><span class="token number">500</span> <span class="token number">200</span> OK <span class="token keyword">in</span> <span class="token number">2</span> milliseconds
+</code></pre>
+<p>This will print the request header and request url</p>
+<p>For further inDepth information on the request use the <code>-v8</code> which shows both request and response</p>
+<h3 id="labels">Labels<a aria-hidden="true" class="anchor-heading icon-link" href="#labels"></a></h3>
+<p>The most and powerful way of filtering a resource in kubernetes is through <code>labels</code>. Similar to </p>
+<pre class="language-bash"><code class="language-bash">kubectl get po -l k8s-app<span class="token operator">=</span>kube-proxy -n kube-system
+</code></pre>
+<p>similar to </p>
+<pre><code>curl http://localhost:8080/api/v1/namespaces/kube-system/pods?labelSelector=k8s-app==kube-proxy&#x26;limit=10
+</code></pre>
+<h4 id="advance-labels">Advance labels<a aria-hidden="true" class="anchor-heading icon-link" href="#advance-labels"></a></h4>
+<p>Advance selection can be made with <code>in</code> <code>not in</code> selectors</p>
+<p>in option</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:8080/api/v1/namespaces/kube-system/pods?labelSelector<span class="token operator">=</span>k8s-app+notin+<span class="token punctuation">(</span>kube-proxy,kindset<span class="token punctuation">)</span><span class="token operator">&#x26;</span><span class="token assign-left variable">limit</span><span class="token operator">=</span><span class="token number">10</span>
+</code></pre>
+<p>not in option</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:8080/api/v1/namespaces/kube-system/pods?labelSelector<span class="token operator">=</span>k8s-app+in+<span class="token punctuation">(</span>kube-proxy,kindset<span class="token punctuation">)</span><span class="token operator">&#x26;</span><span class="token assign-left variable">limit</span><span class="token operator">=</span><span class="token number">10</span>
+</code></pre>
+<h3 id="field-selector">Field Selector<a aria-hidden="true" class="anchor-heading icon-link" href="#field-selector"></a></h3>
+<p>You can filter resources using a limited set of fields. For all resources, you can filter on the metadata.name field; and for all namespaced resources, you can filter on the metadata.namespace field. Plus some other additional fields are provided</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:8080/api/v1/namespaces/kube-system/pods?fieldSelector<span class="token operator">=</span>status.phase<span class="token operator">=</span>Running
+</code></pre>
+<h3 id="deleting-resource">Deleting Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#deleting-resource"></a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -X http://localhost:8080/api/v1/namespaces/project1/pods/nginx
+</code></pre>
+<h3 id="updating-resource">Updating Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#updating-resource"></a></h3>
+<p>For updating we need to use the PUT call</p>

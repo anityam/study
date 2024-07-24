@@ -1,0 +1,26 @@
+<h1 id="go-programming">Go Programming<a aria-hidden="true" class="anchor-heading icon-link" href="#go-programming"></a></h1>
+<h1 id="go-programming-in-kubernetes">Go Programming In Kubernetes<a aria-hidden="true" class="anchor-heading icon-link" href="#go-programming-in-kubernetes"></a></h1>
+<h2 id="introduction">Introduction<a aria-hidden="true" class="anchor-heading icon-link" href="#introduction"></a></h2>
+<p>Kubernetes is a container orchestration tools which uses declarative method. Kubernetes has an API through which we can interact. It is a REST HTTP based API.</p>
+<h2 id="working">Working<a aria-hidden="true" class="anchor-heading icon-link" href="#working"></a></h2>
+<p>In the beginning of the chain, users declare a high level resources like Pods, Deployments etc. Once the resources are declared then the middle level component called controllers are activated to transfer them into low-levels Pods. Then the schedular distributes those resources in the nodes. Now the node agent deploys the Pod in the scheduled cluster.</p>
+<h2 id="control-plane">Control Plane<a aria-hidden="true" class="anchor-heading icon-link" href="#control-plane"></a></h2>
+<p>The control plane is the main brain of the kubernetes. It handles all the complexity of handling the declared resources in the cluster. It's main components are </p>
+<ol>
+<li>The API Server - This is the main gateway through which the communication to the cluster is done</li>
+<li>The etcd database - This is a database which stores the state of the cluster. Only accessible through API server.</li>
+<li>The controller manager - This manages the controllers which transforms the users declared resources to kubernetes low level components. The controller sync with the API to maintain the state of the resources.</li>
+<li>Schedular - It maintains the resource distribution in the nodes. It watches the api server for change</li>
+<li>Kubelet - Agent in each nodes. It manages workload specified to it's specific node after schedular schedules it. It watches the API server for any change in its node.</li>
+<li>Kube-Proxy - Agent to manage network. Runs on all nodes and watches the API server for any change</li>
+</ol>
+<h2 id="api">API<a aria-hidden="true" class="anchor-heading icon-link" href="#api"></a></h2>
+<h2 id="cluster">Cluster<a aria-hidden="true" class="anchor-heading icon-link" href="#cluster"></a></h2>
+<p>Creating a cluster for testing API code can be found at <a href="https://github.com/anityam/kubernetesGo">kubernetesGo</a>.</p>
+<h3 id="openapi">OpenAPI<a aria-hidden="true" class="anchor-heading icon-link" href="#openapi"></a></h3>
+<p>Kubernetes uses the openAPI format to specify it REST API HTTP calls. To check</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/study/notes/xfctexp3l6yk3u2l1w37uwk">client_go</a></li>
+</ol>
